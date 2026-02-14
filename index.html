@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Cancellation Guide - Get Your Irish Driving Test Faster</title>
+    <title>FastPassIE - Get Your Irish Driving Test Faster</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -16,14 +16,14 @@
         .container {
             max-width: 800px;
             margin: 40px auto;
-            padding: 30px;
+            padding: 40px;
             background: #ffffff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             border-radius: 8px;
         }
         h1 {
             text-align: center;
-            color: #0056b3;
+            color: #004085;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
@@ -36,16 +36,21 @@
         p {
             margin-bottom: 20px;
         }
+        .site-logo {
+            height: auto;
+            max-height: 80px;
+            width: auto;
+        }
         .benefits {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 5px;
             margin: 30px 0;
-            border-left: 5px solid #007bff;
+            border-left: 5px solid #004085;
         }
         .benefits h2 {
             margin-top: 0;
-            color: #007bff;
+            color: #004085;
         }
         .benefits ul {
             list-style-type: none;
@@ -75,9 +80,14 @@
         .testimonial-card {
             background: #f8f9fa;
             border: 1px solid #e9ecef;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-3px);
         }
         .testimonial-card p {
             margin: 0;
@@ -93,16 +103,25 @@
         .cta {
             text-align: center;
             margin: 40px 0;
-            padding: 20px;
+            padding: 30px;
             background-color: #007bff;
-            border-radius: 5px;
+            color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .cta p {
             color: #fff;
-            font-size: 1.2em;
-            margin-bottom: 20px;
         }
-        .cta button {
+        .cta .price-tag {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .cta .delivery-info {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+        .cta-button {
             background: #ffffff;
             color: #007bff;
             border: none;
@@ -111,16 +130,20 @@
             font-weight: bold;
             cursor: pointer;
             border-radius: 50px;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
         }
-        .cta button:hover {
+        .cta-button:hover {
             background: #0056b3;
             color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         footer {
             text-align: center;
             padding: 20px;
-            margin-top: 40px;
+            margin-top: 60px;
             background: #343a40;
             color: white;
             border-radius: 8px;
@@ -128,15 +151,15 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar Logo -->
-<div style="text-align:center; padding: 20px 0; background-color: #ffffff;">
-  <img src="fastpasslogo.png" alt="FastPassIE Logo" style="max-height:100px; width:auto;">
-</div>
+    <header style="background-color: #ffffff; border-bottom: 1px solid #e9ecef; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+        <div style="text-align:center;">
+            <img src="fastpasslogo.png" alt="FastPassIE Logo" class="site-logo">
+        </div>
+    </header>
+
     <div class="container">
-       
         <h1>Skip the Driving Test Waitlist!</h1>
         <p class="subtitle">Tired of waiting months for your driving test? Get an earlier date in days.</p>
-
         <p>Our simple guide shows you the proven method to find and book cancellation driving test slots fast. Stop letting the waiting list hold you back from work, travel, and freedom. For just €15, you can get on the road.</p>
 
         <div class="benefits">
@@ -174,18 +197,14 @@
             </div>
         </div>
 
-               </div>   <!-- closing of testimonials -->
-
-        <!-- PASTE THE NEW CTA HERE -->
-        <div style="text-align:center; margin:50px 0; padding:30px; background:#007bff; color:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-            <p style="font-size:1.6em; margin-bottom:20px; font-weight:bold;">Get Instant Access for Only €15</p>
-            <p style="font-size:1.1em; margin-bottom:25px;">PDF guide emailed instantly after payment – no waiting!</p>
-            <a href="https://revolut.me/xotix"  <!-- change to Payhip/Gumroad link later -->
-               Buy Now & Get Guide
-            </a>
+        <div class="cta">
+            <p class="price-tag">Get Instant Access for Only €15</p>
+            <p class="delivery-info">PDF guide emailed instantly after payment – no waiting!</p>
+            <form action="https://revolut.me/xotix" method="get" target="_blank" style="display: inline;">
+                <button type="submit" class="cta-button">Buy Now & Get Guide</button>
+            </form>
         </div>
-
-    </div>   <!-- closing of .container -->
+    </div>
 
     <footer>
         <p>&copy; 2026 FastPassIE. All rights reserved.</p>

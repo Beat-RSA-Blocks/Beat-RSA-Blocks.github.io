@@ -396,12 +396,16 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
-        /* Mobile-only: Show road.jpg inside the container with overlay for readability */
+        /* Mobile-only: Remove full-page background, apply road.jpg + white overlay ONLY inside .container */
         @media (max-width: 768px) {
+            body {
+                background: #f4f7f6; /* Remove road.jpg from full page */
+                background-image: none;
+            }
             .container {
                 background: url('road.jpg') no-repeat center center;
                 background-size: cover;
-                background-color: rgba(255, 255, 255, 0.85);
+                background-color: rgba(255, 255, 255, 0.85); /* White overlay to grey out image */
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
                 border-radius: 12px;
                 padding: 40px;

@@ -20,8 +20,6 @@
             background-color: #f4f7f6; /* Fallback in case image fails to load */
         }
 
-        /* REMOVED: body::before block — this was the white/grey overlay covering your background */
-
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -396,6 +394,19 @@
             background: #0056b3;
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Mobile-only: Show road.jpg inside the container with overlay for readability */
+        @media (max-width: 768px) {
+            .container {
+                background: url('road.jpg') no-repeat center center;
+                background-size: cover;
+                background-color: rgba(255, 255, 255, 0.85);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
+                padding: 40px;
+                margin: 20px 15px;
+            }
         }
     </style>
 </head>

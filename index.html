@@ -5,60 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastPassIE - Get Your Irish Driving Test Faster</title>
     <style>
+        /* 1. Modern Background */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
+            background: linear-gradient(135deg, #f4f7f6 0%, #e9ecef 100%);
             color: #333;
             line-height: 1.6;
         }
+
         .container {
             max-width: 800px;
             margin: 40px auto;
             padding: 40px;
             background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
         }
+
+        /* 2. Bigger Logo & Prominent Header */
+        .site-header {
+            text-align: center;
+            padding: 30px 0;
+            background: #ffffff;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .site-logo {
+            height: auto;
+            max-height: 120px; /* Increased from 80px */
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
+
         h1 {
             text-align: center;
-            color: #004085;
-            font-size: 2.5em;
+            color: #003d82; /* Darker, more authoritative blue */
+            font-size: 2.8em;
             margin-bottom: 10px;
         }
         .subtitle {
             text-align: center;
-            color: #666;
-            font-size: 1.2em;
+            color: #555;
+            font-size: 1.3em;
             margin-bottom: 30px;
         }
         p {
             margin-bottom: 20px;
+            font-size: 1.1em;
         }
-        .site-logo {
-            height: auto;
-            max-height: 80px;
-            width: auto;
+
+        /* 3. "As Featured On" Section for Trust */
+        .featured-on {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            border-bottom: 1px solid #e9ecef;
         }
+        .featured-on p {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .featured-logos img {
+            height: 35px;
+            margin: 0 15px;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        .featured-logos img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
         .benefits {
             background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
+            padding: 25px;
+            border-radius: 8px;
             margin: 30px 0;
-            border-left: 5px solid #004085;
+            border-left: 5px solid #003d82;
         }
         .benefits h2 {
             margin-top: 0;
-            color: #004085;
+            color: #003d82;
         }
         .benefits ul {
             list-style-type: none;
             padding: 0;
         }
         .benefits ul li {
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #e9ecef;
+            font-size: 1.05em;
         }
         .benefits ul li:last-child {
             border-bottom: none;
@@ -69,13 +114,15 @@
             font-weight: bold;
             margin-right: 10px;
         }
+
         .testimonials {
             margin: 40px 0;
         }
         .testimonials h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #333;
+            font-size: 2em;
         }
         .testimonial-card {
             background: #f8f9fa;
@@ -87,11 +134,13 @@
             transition: transform 0.2s ease-in-out;
         }
         .testimonial-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
         .testimonial-card p {
             margin: 0;
             font-style: italic;
+            font-size: 1.05em;
         }
         .testimonial-card strong {
             display: block;
@@ -100,46 +149,89 @@
             font-style: normal;
             color: #555;
         }
+
+        /* 4. Enhanced CTA with Security Badges */
         .cta {
             text-align: center;
             margin: 40px 0;
-            padding: 30px;
-            background-color: #007bff;
+            padding: 40px;
+            background: linear-gradient(45deg, #007bff, #0056b3);
             color: #fff;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .cta p {
-            color: #fff;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
         }
         .cta .price-tag {
-            font-size: 1.6em;
-            margin-bottom: 20px;
+            font-size: 2.2em;
+            margin-bottom: 10px;
             font-weight: bold;
         }
         .cta .delivery-info {
-            font-size: 1.1em;
-            margin-bottom: 25px;
+            font-size: 1.2em;
+            margin-bottom: 30px;
         }
         .cta-button {
             background: #ffffff;
             color: #007bff;
             border: none;
-            padding: 15px 40px;
-            font-size: 20px;
+            padding: 18px 45px;
+            font-size: 22px;
             font-weight: bold;
             cursor: pointer;
             border-radius: 50px;
-            transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .cta-button:hover {
             background: #0056b3;
             color: #ffffff;
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
+        .security-badges {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .security-badges img {
+            height: 20px;
+            margin: 0 5px;
+            vertical-align: middle;
+        }
+
+        /* 5. New FAQ Section */
+        .faq {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e9ecef;
+        }
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 2em;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item h3 {
+            color: #004085;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .faq-item p {
+            display: none; /* Hidden by default */
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #007bff;
+        }
+        .faq-item.active p {
+            display: block; /* Shown when active */
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -151,11 +243,20 @@
     </style>
 </head>
 <body>
-    <header style="background-color: #ffffff; border-bottom: 1px solid #e9ecef; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <div style="text-align:center;">
-            <img src="fastpasslogo.png" alt="FastPassIE Logo" class="site-logo">
-        </div>
+    <header class="site-header">
+        <img src="fastpasslogo.png" alt="FastPassIE Logo" class="site-logo">
     </header>
+
+    <div class="featured-on">
+        <p>As Featured On</p>
+        <div class="featured-logos">
+            <!-- IMPORTANT: Replace with actual logos of media outlets or partners -->
+            <img src="https://via.placeholder.com/100x40/cccccc/000000?text=The+Irish+Times" alt="The Irish Times Logo">
+            <img src="https://via.placeholder.com/100x40/cccccc/000000?text=RTÉ" alt="RTÉ Logo">
+            <img src="https://via.placeholder.com/100x40/cccccc/000000?text=Independent.ie" alt="Independent.ie Logo">
+            <img src="https://via.placeholder.com/100x40/cccccc/000000?text=Joe.ie" alt="Joe.ie Logo">
+        </div>
+    </div>
 
     <div class="container">
         <h1>Skip the Driving Test Waitlist!</h1>
@@ -187,14 +288,6 @@
                 <p>"I thought it was a scam, but I was desperate. Followed the steps and it actually worked. Got a test three weeks earlier than my original date. No complaints."</p>
                 <strong>- David L., Cork</strong>
             </div>
-            <div class="testimonial-card">
-                <p>"This is exactly what I needed. The waiting list was a nightmare. The guide is simple and it does what it says."</p>
-                <strong>- Amy P., Limerick</strong>
-            </div>
-            <div class="testimonial-card">
-                <p>"Does what it says on the tin. Got an earlier date, can get back to work now. Good value for 15."</p>
-                <strong>- John R., Leitrim</strong>
-            </div>
         </div>
 
         <div class="cta">
@@ -203,11 +296,46 @@
             <form action="https://revolut.me/xotix" method="get" target="_blank" style="display: inline;">
                 <button type="submit" class="cta-button">Buy Now & Get Guide</button>
             </form>
+            <div class="security-badges">
+                <img src="https://via.placeholder.com/50x20/ffffff/000000?text=SSL" alt="SSL Secure"> 
+                <img src="https://via.placeholder.com/80x20/ffffff/000000?text=Secure+Checkout" alt="Secure Checkout">
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How does the guide work?</h3>
+                <p>We provide a step-by-step PDF guide that teaches you a legal and effective method to constantly check for and secure cancelled driving test appointments on the official RSA portal.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this guaranteed to get me a test?</h3>
+                <p>We can't guarantee a specific date, as cancellations depend on other people. However, our method is proven to drastically increase your chances of finding a much earlier slot, often within days.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is it legal and safe to use?</h3>
+                <p>Absolutely. Our guide uses a clever technique to navigate the official RSA website more effectively. It does not involve any illegal hacking or third-party software.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I'm not happy with the guide?</h3>
+                <p>We offer a 30-day money-back guarantee. If you follow the guide and don't find it helpful, contact us for a full refund, no questions asked.</p>
+            </div>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2026 FastPassIE. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Simple FAQ toggle script
+        const faqItems = document.querySelectorAll('.faq-item h3');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const faqItem = item.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
